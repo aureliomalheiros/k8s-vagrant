@@ -10,7 +10,7 @@ sudo kubeadm config images pull
 
 echo "[TASK 02] Iniciliando o Cluster"
 
-sudo kubeadm init --apiserver-advertise-address=192.168.33.10 --pod-network-cidr=10.10.10.0/24 >> /tmp/kubeinit.log
+sudo kubeadm init --apiserver-advertise-address=192.168.33.10 --pod-network-cidr=172.10.0.0/16 >> /tmp/kubeinit.log
 
 echo "[TASK 03] Criação do .kube para o usuário regular"
 

@@ -44,7 +44,4 @@ echo "[TASK 08] Instalação de pacotes"
 
 sudo apt-get install -y kubeadm kubelet kubectl
 
-echo "[TASK 09] Verificação dos módulos"
-
-sudo modprobe br_netfilter ip_vs_rr ip_vs_wrr ip_vs_sh nf_conntrack_ipv4 ip_vs
 
