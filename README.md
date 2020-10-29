@@ -1,18 +1,18 @@
 # Ambiente de estudos Kubernetes
 
 ### Descrição do Projeto
----
+
 > Projeto é voltado, para criação de um ambiente de estudos do Kubernetes,
 > sem que seja necessário a instalação manual, ou seja, de forma automatizada.
 
 
 ### Pré-requisitos
----
+
 - Virtual Box
 - Vagrant
-- 2 CPUS ou mais
-- 6GB de memória RAM
-- 10GB livre de disco
+- 2 CPUs ou mais
+- 6 GB de memória RAM
+- 10 GB livre de disco
 
 ### ✨ Explicação do projeto
 
@@ -38,7 +38,7 @@ host@host:~$ git clone https://github.com/aureliomalheiros/kubernetes-vagrant.gi
 host@host:~$ vagrant up
 ```
 
-3. Depois acesse o servidor _host01_
+3. Após finalizada as instalações acesse o servidor **host01**
 
 ```console
 host$host:~$ vagrant ssh host01
@@ -60,10 +60,11 @@ Saida deve algo semelhante a imagem abaixo:
 
 Você deve copiar a saida
 
-5. Após copiar a saida, cole via linha de comando nos outros dois servidores (_host02_ e _host03_)
+5. Após copiar a saida, cole via linha de comando nos outros dois servidores (**host02** e **host03**)
 
 Abaixo vamos mostrar um exemplo:
-**host02**
+
+- Servidor: **host02**
 
 ```console
 host@host02:~$ sudo su
@@ -72,7 +73,7 @@ Cole a saida, como mostra a imagem abaixo:
 
 ![host02](https://user-images.githubusercontent.com/12739791/97642150-3f1d6280-1a23-11eb-8056-e8bcd42ae7b8.png)
 
-**host03**
+- Servidor: **host03**
 
 ```console
 host@host03:~$ sudo su
