@@ -21,26 +21,39 @@
 ### Execução
 
 1. Clone o projeto para sua máquina
-2. Acesse a pasta e digite o comando abaixo:
+2. Acesse a pasta **kubernetes-vagrant** e digite o comando abaixo:
 
-```sh
-$ vagrant up
+```console
+host$host:~$ vagrant up
 ```
 
 3. Depois acesse o servidor _host01_
-```sh
-$ vagrant ssh host01
+```console
+host$host:~$ vagrant ssh host01
 ```
 4. Agora vamos pegar a token do cluster
+
 ```console
 host@host01:~$sudo su
+```
+```console
 host@host01:# cat /tmp/kubernetes.log
-```
-5. copie a saida e cole nos outros dois servidores (_host02_ e _host03_)
-```sh
-# cat /tmp/kubernetes.log
-```
 
+```
+Saida deve algo semelhante a imagem abaixo:
+
+![kubernetes](https://user-images.githubusercontent.com/12739791/97629293-aaa80580-1a0c-11eb-9f7e-0b0d3a459912.png)
+
+5. copie a saida e cole via linha de comando nos outros dois servidores (_host02_ e _host03_)
+
+Abaixo vamos mostrar um exemplo:
+
+
+6. Após isso aguarde até os servidores ficarem no estado de **ready**
+
+```console
+host@host01:# kubectl get nodes
+```
 
 ### 🛠 Tecnologias
 
