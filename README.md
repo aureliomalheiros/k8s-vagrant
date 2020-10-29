@@ -31,13 +31,13 @@
 1. Clone o projeto para sua máquina
 
 ```console
-https://github.com/aureliomalheiros/kubernetes-vagrant.git
+host@host:~$ git clone https://github.com/aureliomalheiros/kubernetes-vagrant.git
 ```
 
 2. Acesse a pasta **kubernetes-vagrant** e digite o comando abaixo:
 
 ```console
-host$host:~$ vagrant up
+host@host:~$ vagrant up
 ```
 
 3. Depois acesse o servidor _host01_
@@ -72,7 +72,7 @@ host@host01:# kubectl get nodes
 ```
 
 ```
-
+```
 ### 🛠 Tecnologias
 
 ```
