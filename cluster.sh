@@ -24,4 +24,4 @@ sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl v
 
 echo "[TASK 05] Salvando a chave"
 
-sudo kubeadm token create --print-join-command >> /tmp/kubenertes.log
+sudo kubeadm token create --print-join-command >> /home/vagrant/kubenertes.log
