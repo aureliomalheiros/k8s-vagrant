@@ -84,7 +84,7 @@ Cole a saida, como mostra a imagem abaixo:
 
 
 6. Após isso aguarde até os servidores ficarem no estado de **ready**
-
+> A verificação do estado dos nodes deve ser feito no **Master**
 ```console
 host@host01:# kubectl get nodes
 ```
