@@ -51,12 +51,12 @@ host@host01:~$ sudo su
 ```
 
 ```console
-host@host01:# cat /tmp/kubernetes.log
+host@host01:# cat kubernetes.log
 ```
 
 Saida deve algo semelhante a imagem abaixo:
 
-![token-host01](https://user-images.githubusercontent.com/12739791/97641540-e39ea500-1a21-11eb-9fab-324b1a0580e9.png)
+![kubernetes-01](https://user-images.githubusercontent.com/12739791/99885728-d0908680-2c15-11eb-83c9-3c66486432a6.png)
 
 Você deve copiar a saida
 
@@ -71,7 +71,7 @@ host@host02:~$ sudo su
 ```
 Cole a saida, como mostra a imagem abaixo:
 
-![host02](https://user-images.githubusercontent.com/12739791/97642150-3f1d6280-1a23-11eb-8056-e8bcd42ae7b8.png)
+![kubernetes-02](https://user-images.githubusercontent.com/12739791/99885811-4d236500-2c16-11eb-90fd-61e33b0f1080.png)
 
 - Servidor: **host03**
 
@@ -80,7 +80,7 @@ host@host03:~$ sudo su
 ```
 Cole a saida, como mostra a imagem abaixo:
 
-![host03](https://user-images.githubusercontent.com/12739791/97642192-53615f80-1a23-11eb-9c27-a352ff0492bd.png)
+![kubernetes-03](https://user-images.githubusercontent.com/12739791/99885821-5a405400-2c16-11eb-92d0-267d89a47eab.png)
 
 
 6. Após isso aguarde até os servidores ficarem no estado de **ready**
