@@ -44,54 +44,40 @@ host@host:~$ vagrant up
 host$host:~$ vagrant ssh host01
 ```
 
-4. Agora vamos pegar a token do cluster
-
-```console
-host@host01:~$ sudo su
-```
-
-```console
-host@host01:# cat kubernetes.log
-```
-
-Saida deve algo semelhante a imagem abaixo:
-
-![kubernetes-01](https://user-images.githubusercontent.com/12739791/99885728-d0908680-2c15-11eb-83c9-3c66486432a6.png)
-
-Você deve copiar a saida
-
-5. Após copiar a saida, cole via linha de comando nos outros dois servidores (**host02** e **host03**)
-
-Abaixo vamos mostrar um exemplo:
-
-- Servidor: **host02**
-
-```console
-host@host02:~$ sudo su
-```
-Cole a saida, como mostra a imagem abaixo:
-
-![kubernetes-02](https://user-images.githubusercontent.com/12739791/99885811-4d236500-2c16-11eb-90fd-61e33b0f1080.png)
-
-- Servidor: **host03**
-
-```console
-host@host03:~$ sudo su
-```
-Cole a saida, como mostra a imagem abaixo:
-
-![kubernetes-03](https://user-images.githubusercontent.com/12739791/99885821-5a405400-2c16-11eb-92d0-267d89a47eab.png)
-
-
-6. Após isso aguarde até os servidores ficarem no estado de **ready**
+4. Após isso aguarde até os servidores ficarem no estado de **ready**
 > A verificação do estado dos nodes deve ser feito no **Master**
 ```console
 host@host01:# kubectl get nodes
 ```
-![get-nodes-ready](https://user-images.githubusercontent.com/12739791/97642329-a4715380-1a23-11eb-96d5-b16cd367aa66.png)
+
+A saída deve ser igual a abaixo:
+
+![kubernetes-pull-automate](https://user-images.githubusercontent.com/12739791/100385983-ee3d6180-3002-11eb-82c3-098a05fea135.png)
 
 > No primeiro momento pode aparecer no estado NotReady,
 > porém é só aguardar até os serviços inicializarem
+
+5. Para o acesso via Dashboard faça os seguintes procedimentos:
+
+Coloque o IP do Master no navegador:
+
+http://192.168.33.10:30002/#/login
+
+Vai aparecer uma tela solicitando o token para autenticação.
+
+6. Acesse o host01
+```console
+host@host01:# cat token-dashboard.log
+```
+A saida será semelhante a abaixo:
+
+![token-kubernetes](https://user-images.githubusercontent.com/12739791/100391247-9f4af880-3011-11eb-9870-0f5ded0c2782.png)
+
+Copie o token e coloque na entrada do dashboard do Kubernetes
+
+> Abaixo tem um gif para melhor entendimento:
+
+![ezgif com-optimize](https://user-images.githubusercontent.com/12739791/100390956-c5bc6400-3010-11eb-853f-35670fe753bb.gif)
 
 ### 🛠 Tecnologias
 
