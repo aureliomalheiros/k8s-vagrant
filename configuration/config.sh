@@ -50,7 +50,7 @@ sudo apt-get update > /dev/null 2>&1
 
 echo "[TASK 09] Instalação de pacotes - kubeadm - kubelet kubectl"
 
-sudo apt-get install -y kubeadm kubelet kubectl > /dev/null 2>&1
+sudo apt-get install -y kubeadm=1.19.5-00 kubelet=1.19.5-00 kubectl=1.19.5-00 > /dev/null 2>&1
 
 echo "[TASK 10] Desabilitando firewall"
 

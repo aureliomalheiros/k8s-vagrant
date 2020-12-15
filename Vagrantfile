@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 	
-	config.vm.provision "shell", path: "config.sh"
+	config.vm.provision "shell", path: "configuration/config.sh"
 
 	config.vm.define "host01" do |host01|
 		host01.vm.box = "ubuntu/xenial64"
@@ -15,8 +15,8 @@ Vagrant.configure("2") do |config|
 		end
 		host01.vm.provision "shell", inline: <<-SHELL
 		SHELL
-		host01.vm.provision "shell", path: "host01.sh"
-		host01.vm.provision "shell", path: "cluster.sh"
+		host01.vm.provision "shell", path: "hosts/host01.sh"
+		host01.vm.provision "shell", path: "control-plane/control-plane.sh"
 	end
 
 	config.vm.define "host02" do |host02|
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
 		end
 		host02.vm.provision "shell", inline: <<-SHELL
 		SHELL
-		host02.vm.provision "shell", path: "host02.sh"
+		host02.vm.provision "shell", path: "hosts/host02.sh"
 	end
 	
 	config.vm.define "host03" do |host03|
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
 		end
 		host03.vm.provision "shell", inline: <<-SHELL
 		SHELL
-		host03.vm.provision "shell", path: "host03.sh"
+		host03.vm.provision "shell", path: "hosts/host03.sh"
 	end
 
 end
