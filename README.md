@@ -81,7 +81,7 @@ Copie o token e coloque na entrada do dashboard do Kubernetes
 
 ### 🛠 Tecnologias
 
-![ShellScript](https://img.shields.io/badge/-ShellScript-000000?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![ShellScript](https://img.shields.io/badge/-ShellScript-181717?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-181717?style=for-the-badge&logo=docker)
 ![Kubernetes](https://img.shields.io/badge/-Kubernetes-181717?style=for-the-badge&logo=kubernetes)
 ![VirtualBox](https://img.shields.io/badge/-VirtualBox-181717?style=for-the-badge&logo=virtualbox)
