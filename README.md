@@ -6,7 +6,7 @@
 > sem que seja necessário a instalação manual, ou seja, de forma automatizada.
 
 
-### Pré-requisitos
+### Requirements
 
 - Virtual Box
 - Vagrant
@@ -14,72 +14,65 @@
 - 6 GB de memória RAM
 - 10 GB livre de disco
 
-### ✨ Explicação do projeto
+### ✨ Project explanation
 
-1. Instalação do Docker
-2. Alteração do Cgroup para Systemd e criação da estrutura de drivers
-3. Instalação do Kubernetes
-4. Download do Pull de imagens no _Master_
-5. Instalação do Pod Network (Weave)
+1. Install Docker
+2. Configuration Cgroup and create structure drivers
+3. Install Kubernetes
+4. Pull images in the __Master__
+5. Install Pod Network (Weave)
 
 
 ### 🚀 Execução
 
 
-1. Clone o projeto para sua máquina
+1. Git clone in your machine
 
 ```console
 host@host:~$ git clone https://github.com/aureliomalheiros/kubernetes-vagrant.git
 ```
 
-2. Acesse a pasta **kubernetes-vagrant** e digite o comando abaixo:
+2. access the folder **kubernetes-vagrant** and write the comand following:
 
 ```console
 host@host:~$ vagrant up
 ```
 
-3. Após finalizada as instalações acesse o servidor **host01**
+3. Finished install cluster Kubernetes access host master **knode01**
 
 ```console
-host$host:~$ vagrant ssh host01
+host$host:~$ vagrant ssh knode01
+```
+```console
+host$host:~$ sudo su
 ```
 
-4. Após isso aguarde até os servidores ficarem no estado de **ready**
-> A verificação do estado dos nodes deve ser feito no **Master**
+4. Wait for the state of the nodes to staty in **ready**
+> Verify the state of the nodes in the **Master**
+
 ```console
 host@host01:# kubectl get nodes
 ```
 
-A saída deve ser igual a abaixo:
+The output should be the same as below:
 
 ![kubernetes-pull-automate](https://user-images.githubusercontent.com/12739791/100385983-ee3d6180-3002-11eb-82c3-098a05fea135.png)
 
-> No primeiro momento pode aparecer no estado NotReady,
-> porém é só aguardar até os serviços inicializarem
 
-5. Para o acesso via Dashboard faça os seguintes procedimentos:
 
-Coloque o IP do Master no navegador:
+5. Administrator cluster in the local machine
 
-http://192.168.33.10:30002/#/login
+Install `kubectl` in your machine.
 
-Vai aparecer uma tela solicitando o token para autenticação.
+[Guide install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
-6. Acesse o host01
-```console
-host@host01:# cat token-dashboard.log
-```
-A saida será semelhante a abaixo:
+> Access `knode01` copy output of the file `/root/.kube/config`
 
-![token-kubernetes](https://user-images.githubusercontent.com/12739791/100391247-9f4af880-3011-11eb-9870-0f5ded0c2782.png)
+![Copy output](img/copy-file.gif)
 
-Copie o token e coloque na entrada do dashboard do Kubernetes
+> The output will be placed in your machine file `~/.kube/config` 
 
-> Abaixo tem um gif para melhor entendimento:
-
-![ezgif com-optimize](https://user-images.githubusercontent.com/12739791/100390956-c5bc6400-3010-11eb-853f-35670fe753bb.gif)
-
-### 🛠 Tecnologias
+### 🛠 Tecnologies
 
 ![ShellScript](https://img.shields.io/badge/-ShellScript-181717?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-181717?style=for-the-badge&logo=docker)
@@ -88,9 +81,9 @@ Copie o token e coloque na entrada do dashboard do Kubernetes
 ![Vagrant](https://img.shields.io/badge/-Vagrant-181717?style=for-the-badge&logo=vagrant)
 
 
-### **:books: REFERÊNCIAS**
+### **:books: REFERENCE**
 
-- [Documentação Vagrant](https://www.vagrantup.com/docs)
-- [Documentação Kubernetes](https://kubernetes.io/pt/docs/home/)
+- [Vagrant](https://www.vagrantup.com/docs)
+- [Kubernetes](https://kubernetes.io/pt/docs/home/)
 - [Descomplicando Docker](https://github.com/badtuxx/DescomplicandoKubernetes)
-- [Instalção Kubernetes](https://github.com/leoviana00/kubernetes-install)
+- [Install Kubernetes](https://github.com/leoviana00/kubernetes-install)
