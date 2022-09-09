@@ -75,7 +75,7 @@ Install `kubectl` in your machine.
 
 #### Metrics
 
-In the [folder metrics](metrics-server) there are some file yamls to using monitoring logs, memory and CPU.
+In the [folder metrics](metrics) there are some file yamls to using monitoring logs, memory and CPU.
 
 ```bash
 kubectl apply -f metrics-server/
