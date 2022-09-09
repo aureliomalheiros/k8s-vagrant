@@ -1,18 +1,19 @@
-# Ambiente de estudos Kubernetes
+# Environment Kubernetes
 
-### Descrição do Projeto
+## Describe
 
-> Projeto é voltado, para criação de um ambiente de estudos do Kubernetes,
-> sem que seja necessário a instalação manual, ou seja, de forma automatizada.
-
+> Project:
+- Create environment Kubernetes;
+- Automatically create cluster;
+- Cluster Local (Your machine).
 
 ### Requirements
 
 - Virtual Box
 - Vagrant
 - 2 CPUs ou mais
-- 6 GB de memória RAM
-- 10 GB livre de disco
+- 6 GB memory RAM
+- 10 GB Disk
 
 ### ✨ Project explanation
 
@@ -23,7 +24,7 @@
 5. Install Pod Network (Weave)
 
 
-### 🚀 Execução
+#### 🚀 Running
 
 
 1. Git clone in your machine
@@ -72,7 +73,15 @@ Install `kubectl` in your machine.
 
 > The output will be placed in your machine file `~/.kube/config` 
 
-### 🛠 Tecnologies
+#### Metrics
+
+In the [folder metrics](metrics-server) there are some file yamls to using monitoring logs, memory and CPU.
+
+```bash
+kubectl apply -f metrics-server/
+```
+
+#### 🛠 Tecnologies
 
 ![ShellScript](https://img.shields.io/badge/-ShellScript-181717?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-181717?style=for-the-badge&logo=docker)
@@ -81,7 +90,7 @@ Install `kubectl` in your machine.
 ![Vagrant](https://img.shields.io/badge/-Vagrant-181717?style=for-the-badge&logo=vagrant)
 
 
-### **:books: REFERENCE**
+#### **:books: REFERENCE**
 
 - [Vagrant](https://www.vagrantup.com/docs)
 - [Kubernetes](https://kubernetes.io/pt/docs/home/)
