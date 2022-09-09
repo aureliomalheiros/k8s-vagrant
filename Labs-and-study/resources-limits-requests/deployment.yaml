@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource-container
+spec:
+  selector:
+    matchLabels:
+      app: resource-container
+  template:
+    metadata:
+      labels:
+        app: resource-container
+    spec:
+      containers:
+      - name: resource-container
+        image: gcr.io/kubernetes-e2e-test-images/resource-consumer:1.4
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "64Mi"
+            cpu: "500m"
+        command:
+          - "/consumer"
+          - -port
+          - "8080"
+        ports:
+        - containerPort: 8080

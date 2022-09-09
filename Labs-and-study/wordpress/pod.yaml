@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wordpress
+spec:
+  containers:
+    - name: meucontainer
+      image: aureliosmalheiros/wordpress-testing:0.2

@@ -2,7 +2,6 @@
 
 ## Describe
 
-> Project:
 - Create environment Kubernetes;
 - Automatically create cluster;
 - Cluster Local (Your machine).

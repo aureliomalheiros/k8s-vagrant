@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: app-deploy
+  name: app-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        env:
+        - name: CONFIGMAP_VARIABLE
+          valueFrom:
+            configMapKeyRef:
+              name: variable-testing
+              key: variable
+status: {}

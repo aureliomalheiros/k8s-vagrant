@@ -1,0 +1,12 @@
+#Agrupamento do meu pod
+apiVersion: v1
+#Tipo de objeto criado
+kind: Pod
+#Nome, namespace, imagem, entre outros
+metadata:
+  name: meuprimeiropod
+#Especificação é a imagem do container
+spec:
+  containers:
+    - name: meucontainer
+      image: kubedevio/nginx-color:blue
