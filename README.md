@@ -10,7 +10,7 @@
 
 - Virtual Box
 - Vagrant
-- 2 CPUs ou mais
+- 2 CPUs
 - 6 GB memory RAM
 - 10 GB Disk
 
@@ -29,35 +29,40 @@
 1. Git clone in your machine
 
 ```console
-host@host:~$ git clone https://github.com/aureliomalheiros/kubernetes-vagrant.git
+host@host:~$ git clone https://github.com/aureliomalheiros/k8s-vagrant.git
 ```
 
-2. access the folder **kubernetes-vagrant** and write the comand following:
+2. access the folder **k8s-vagrant** and write the comand following:
+
+Create folder `token`
 
 ```console
-host@host:~$ vagrant up
+mkdir token 
+```
+
+```console
+vagrant up
 ```
 
 3. Finished install cluster Kubernetes access host master **knode01**
 
 ```console
-host$host:~$ vagrant ssh knode01
+vagrant ssh knode01
 ```
 ```console
-host$host:~$ sudo su
+sudo su
 ```
 
 4. Wait for the state of the nodes to staty in **ready**
 > Verify the state of the nodes in the **Master**
 
 ```console
-host@host01:# kubectl get nodes
+kubectl get nodes
 ```
 
 The output should be the same as below:
 
 ![kubernetes-pull-automate](https://user-images.githubusercontent.com/12739791/100385983-ee3d6180-3002-11eb-82c3-098a05fea135.png)
-
 
 
 5. Administrator cluster in the local machine
@@ -72,14 +77,6 @@ Install `kubectl` in your machine.
 
 > The output will be placed in your machine file `~/.kube/config` 
 
-#### Metrics
-
-In the [folder metrics](metrics) there are some file yamls to using monitoring logs, memory and CPU.
-
-```bash
-kubectl apply -f metrics-server/
-```
-
 #### 🛠 Tecnologies
 
 ![ShellScript](https://img.shields.io/badge/-ShellScript-181717?style=for-the-badge&logo=gnu-bash&logoColor=white)
@@ -93,5 +90,3 @@ kubectl apply -f metrics-server/
 
 - [Vagrant](https://www.vagrantup.com/docs)
 - [Kubernetes](https://kubernetes.io/pt/docs/home/)
-- [Descomplicando Docker](https://github.com/badtuxx/DescomplicandoKubernetes)
-- [Install Kubernetes](https://github.com/leoviana00/kubernetes-install)
