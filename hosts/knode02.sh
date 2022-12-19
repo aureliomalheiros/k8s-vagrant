@@ -11,5 +11,5 @@ sed -i "s/^127.*/192.168.57.11 knode02 localhost/g" /etc/hosts
 
 echo "[TASK 02] Configurando a chave"
 
-sshpass -p "vagrant" scp  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@knode01:/home/vagrant/kubernetes.sh /home/vagrant/kubernetes.sh > /dev/null 2>&1
+#sshpass -p "vagrant" scp  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@knode01:/home/vagrant/kubernetes.sh /home/vagrant/kubernetes.sh > /dev/null 2>&1
 bash /home/vagrant/kubernetes.sh > /dev/null 2>&1
