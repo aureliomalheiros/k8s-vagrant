@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", path: "configuration/config.sh"
 	config.vm.provision "shell", path: "configuration/cri.sh"
 	config.vm.provision "shell", path: "configuration/pkg-kube.sh"
-	config.vm.provision :file, source: "192.168.57.10/home/vagrant/kubernetes.conf", destination: "192.168.57.11/tmp/kubernetes.conf"
-
+	config.vm.synced_folder 'token/', '/home/vagrant/token/', type: "virtualbox"
+	
 	config.vm.define "knode01" do |knode01|
 		knode01.vm.box = "ubuntu/bionic64"
 		knode01.vm.network "private_network", ip: "192.168.57.10"
@@ -18,9 +18,6 @@ Vagrant.configure("2") do |config|
 			vb.memory = 2048
 			vb.cpus = 2
 		end
-		knode01.vm.provision "shell", inline: <<-SHELL
-		SHELL
-		knode01.vm.provision "shell", path: "hosts/knode01.sh"
 		knode01.vm.provision "shell", path: "configuration/control-plane.sh"
 	end
 
@@ -28,7 +25,7 @@ Vagrant.configure("2") do |config|
 		knode02.vm.box = "ubuntu/bionic64"
 		knode02.vm.network "private_network", ip: "192.168.57.11"
 		knode02.vm.hostname = "knode02"
-
+		 
 		knode02.vm.provider "virtualbox" do |vb|
 			vb.name = "knode02"
 			vb.customize ["modifyvm", :id, "--audio", "none"]
@@ -36,6 +33,7 @@ Vagrant.configure("2") do |config|
 			vb.cpus = 2
 		end
 		knode02.vm.provision "shell", inline: <<-SHELL
+			bash /home/vagrant/token/token.conf
 		SHELL
 	end	
 	config.vm.define "knode03" do |knode03|
@@ -50,6 +48,7 @@ Vagrant.configure("2") do |config|
 			vb.cpus = 2
 		end
 		knode03.vm.provision "shell", inline: <<-SHELL
+			bash /home/vagrant/token/token.conf
 		SHELL
 	end
 

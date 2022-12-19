@@ -16,8 +16,3 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 
-
-#sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-#systemctl reload sshd
-
-#sudo apt install -q -y sshpass > /dev/null 2>&1
